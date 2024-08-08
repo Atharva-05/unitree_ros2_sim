@@ -1,0 +1,333 @@
+# Controller Manager configuration
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # Hz
+    use_sim_time: true  # If running in simulation
+
+    # Define the available controllers
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    imu_sensor_broadcaster:
+      type: imu_sensor_broadcaster/ImuSensorBroadcaster
+
+    FR_hip_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    FL_hip_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    RR_hip_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    RL_hip_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    FR_calf_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    FL_calf_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    RR_calf_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    RL_calf_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    FR_thigh_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    FL_thigh_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    RR_thigh_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+
+    RL_thigh_controller:
+      type: ros2_unitree_legged_control/UnitreeLeggedController
+    
+
+
+# Define the properties of each controller
+FR_hip_controller:
+  ros__parameters:
+    joint_name: "FR_hip_joint"
+    pid:
+      p: 100.0
+      i: 0
+      d: 5.0
+
+FL_hip_controller:
+  ros__parameters:
+    joint_name: "FL_hip_joint"
+    pid:
+      p: 100.0
+      i: 0
+      d: 5.0
+
+RR_hip_controller:
+  ros__parameters:
+    joint_name: "RR_hip_joint"
+    pid:
+      p: 100.0
+      i: 0
+      d: 5.0
+
+RL_hip_controller:
+  ros__parameters:
+    joint_name: "RL_hip_joint"
+    pid:
+      p: 100.0
+      i: 0
+      d: 5.0
+
+# Thigh controllers
+FR_thigh_controller:
+  ros__parameters:
+    joint_name: "FR_thigh_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+FL_thigh_controller:
+  ros__parameters:
+    joint_name: "FL_thigh_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+RR_thigh_controller:
+  ros__parameters:
+    joint_name: "RR_thigh_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+RL_thigh_controller:
+  ros__parameters:
+    joint_name: "RL_thigh_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+# Calf controllers
+FR_calf_controller:
+  ros__parameters:
+    joint_name: "FR_calf_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+FL_calf_controller:
+  ros__parameters:
+    joint_name: "FL_calf_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+RR_calf_controller:
+  ros__parameters:
+    joint_name: "RR_calf_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+RL_calf_controller:
+  ros__parameters:
+    joint_name: "RL_calf_joint"
+    pid:
+      p: 300.0
+      i: 0
+      d: 8.0
+
+
+# FRposition_trajectory_controller:
+#   ros__parameters:
+#     joints:
+#       - FR_hip_joint
+#       - FR_thigh_joint
+#       - FR_calf_joint
+
+#     command_interfaces:
+#       - effort
+
+#     state_interfaces:
+#       - position
+#       - velocity
+
+#     state_publish_rate: 50.0  # Hz
+#     action_monitor_rate: 20.0  # Hz
+
+#     allow_partial_joints_goal: false
+#     open_loop_control: true
+#     allow_integration_in_goal_trajectories: true
+
+#     constraints:
+#       stopped_velocity_tolerance: 0.01
+#       goal_time: 0.0
+
+#     gains:
+#       FR_hip_joint:
+#         p: 100.0
+#         i: 0.0
+#         d: 5.0
+
+#       FR_thigh_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+#       FR_calf_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+# FLposition_trajectory_controller:
+#   ros__parameters:
+#     joints:
+#       - FL_hip_joint
+#       - FL_thigh_joint
+#       - FL_calf_joint
+
+#     command_interfaces:
+#       - effort
+
+#     state_interfaces:
+#       - position
+#       - velocity
+
+#     state_publish_rate: 50.0  # Hz
+#     action_monitor_rate: 20.0
+
+#     allow_partial_joints_goal: false
+#     open_loop_control: true
+#     allow_integration_in_goal_trajectories: true
+
+#     constraints:
+#       stopped_velocity_tolerance: 0.01
+#       goal_time: 0.0
+
+#     gains:
+#       FL_hip_joint:
+#         p: 100.0
+#         i: 0.0
+#         d: 5.0
+
+#       FL_thigh_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+#       FL_calf_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+# RRposition_trajectory_controller:
+#   ros__parameters:
+#     joints:
+#       - RR_hip_joint
+#       - RR_thigh_joint
+#       - RR_calf_joint
+
+#     command_interfaces:
+#       - effort
+
+#     state_interfaces:
+#       - position
+#       - velocity
+
+#     state_publish_rate: 50.0  # Hz
+#     action_monitor_rate: 20.0
+
+#     allow_partial_joints_goal: false
+#     open_loop_control: true
+#     allow_integration_in_goal_trajectories: true
+
+#     constraints:
+#       stopped_velocity_tolerance: 0.01
+#       goal_time: 0.0
+
+#     gains:
+#       RR_hip_joint:
+#         p: 100.0
+#         i: 0.0
+#         d: 5.0
+
+#       RR_thigh_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+#       RR_calf_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+# RLposition_trajectory_controller:
+#   ros__parameters:
+#     joints:
+#       - RL_hip_joint
+#       - RL_thigh_joint
+#       - RL_calf_joint
+
+#     command_interfaces:
+#       - effort
+
+#     state_interfaces:
+#       - position
+#       - velocity
+
+#     state_publish_rate: 50.0  # Hz
+#     action_monitor_rate: 20.0
+
+#     allow_partial_joints_goal: false
+#     open_loop_control: true
+#     allow_integration_in_goal_trajectories: true
+
+#     constraints:
+#       stopped_velocity_tolerance: 0.01
+#       goal_time: 0.0
+
+#     gains:
+#       RL_hip_joint:
+#         p: 100.0
+#         i: 0.0
+#         d: 5.0
+
+#       RL_thigh_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+#       RL_calf_joint:
+#         p: 300.0
+#         i: 0.0
+#         d: 8.0
+
+
+imu_sensor_broadcaster:
+   ros__parameters:
+
+      sensor_name: "imu_sensor"
+      frame_id: imu_link
+
+      # interface_names.orientation.x: imu_sensor/orientation.x
+      # interface_names.orientation.y: imu_sensor/orientation.y
+      # interface_names.orientation.z: imu_sensor/orientation.z
+
+      # interface_names.angular_velocity.x: imu_sensor/angular_velocity.x
+      # interface_names.angular_velocity.y: imu_sensor/angular_velocity.y
+      # interface_names.angular_velocity.z: imu_sensor/angular_velocity.z
+
+      # interface_names.linear_acceleration.x: imu_sensor/linear_acceleration.x
+      # interface_names.linear_acceleration.y: imu_sensor/linear_acceleration.y
+      # interface_names.linear_acceleration.z: imu_sensor/linear_acceleration.z

@@ -1,0 +1,7 @@
+<library path="ros2_unitree_legged_control">
+  <class name="ros2_unitree_legged_control/UnitreeLeggedController" type="ros2_unitree_legged_control::UnitreeLeggedController" base_class_type="controller_interface::ControllerInterface">
+    <description>
+      Command a joint through the effort interface, ROS 2 version of unitree_legged_control
+    </description>
+  </class>
+</library>
